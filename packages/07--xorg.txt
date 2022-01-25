@@ -1,0 +1,4 @@
+xorg
+xorg-xinit
+xorg-xbacklight
+numlockx

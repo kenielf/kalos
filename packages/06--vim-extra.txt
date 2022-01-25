@@ -1,0 +1,4 @@
+powerline
+vim-ansible
+vim-latex-suite
+vim-nerdtree

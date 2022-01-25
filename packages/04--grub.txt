@@ -1,0 +1,5 @@
+grub
+efibootmgr
+dosfstools
+os-prober
+mtools

@@ -1,0 +1,6 @@
+pipewire
+pipewire-docs
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+helvum

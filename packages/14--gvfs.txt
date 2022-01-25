@@ -1,0 +1,8 @@
+gvfs
+gvfs-afc
+gvfs-goa
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gvfs-google
+gvfs-gphoto2

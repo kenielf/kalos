@@ -1,0 +1,23 @@
+# These are the prefixes for the package files
+00 -- Essential
+01 -- Kernel
+02 -- Firmware
+03 -- CPU Microcode
+04 -- Bootloader
+05 -- Networking
+06 -- Editors
+07 -- Xorg
+08 -- Fonts
+09 -- Window Manager / Desktop Environments
+10 -- Window Manager Addons
+11 -- Theming
+12 -- Audio
+13 -- Input
+14 -- File Manager / Media
+15 -- Browsers
+16 -- Graphical Applications
+17 -- Coding
+18 -- Bluetooth
+19 -- Printers
+20 -- Games
+21 -- LaTeX

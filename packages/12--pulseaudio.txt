@@ -1,0 +1,4 @@
+pulseaudio
+pulseaudio-bluetooth
+pulseaudio-alsa
+pulseaudio-jack

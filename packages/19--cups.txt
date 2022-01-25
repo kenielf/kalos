@@ -1,0 +1,6 @@
+cups
+libcups
+ghostscript
+gsfonts
+gutenprint
+foomatic-db-gutenprint-ppds

@@ -1,0 +1,4 @@
+nordic-theme-git
+kvantum-theme-nordic-git
+capitaine-cursors
+papirus-icon-theme

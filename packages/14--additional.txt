@@ -1,0 +1,7 @@
+tumbler
+ffmpegthumbnailer
+libgsf
+engrampa
+xdg-user-dirs
+ranger
+webp-pixbuf-loader

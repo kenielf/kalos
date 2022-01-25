@@ -1,0 +1,5 @@
+ffmpeg
+mpv
+vlc
+eog
+eog-plugins

@@ -1,0 +1,5 @@
+zathura
+zathura-cb
+zathura-ps
+zathura-djvu
+zathura-pdf-mupdf
