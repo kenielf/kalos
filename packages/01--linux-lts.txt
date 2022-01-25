@@ -1,4 +1,3 @@
 linux-lts
 linux-lts-headers
 linux-lts-docs
-linux-firmware
