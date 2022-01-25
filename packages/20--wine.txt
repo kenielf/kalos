@@ -4,4 +4,3 @@ vkd3d
 lib32-vulkan-mesa-layers
 lib32-mesa
 mesa
-
