@@ -1,0 +1,4 @@
+mesa-git
+lib32-mesa-git
+vulkan-intel-git
+xf86-video-intel
