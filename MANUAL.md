@@ -215,7 +215,7 @@ Unmount filesystems with
 ```
 And then, reboot.
 ```
-reboot
+# reboot
 ```
 
 ## Step 8: Post Install
