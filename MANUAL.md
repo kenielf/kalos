@@ -202,8 +202,10 @@ Set up network on the new system with your previously installed network manager.
 #### Step 6: Bootloader
 Set up your bootloader with your previously installed bootloader.
  - (grub)
-   - `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
-   - `grub-mkconfig -o /boot/grub/grub.cfg`
+  - `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
+  - `grub-mkconfig -o /boot/grub/grub.cfg`
+ - (refind)
+  - `refind-install --usedefault /dev/<boot_partition>`
 
 
 Exit chroot with `exit`
