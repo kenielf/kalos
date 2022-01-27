@@ -77,7 +77,7 @@ And then, mount the filesystems for them to be used.
 ### Pacstrap
 Install necessary packages for a minimal installation with `pacstrap`.
 ```
-# pacstrap /mnt <kernel_packages> linux-firmware base base-devel go wget curl git openssh man-db vim sudo <network_packages> <bootloader_packages>
+# pacstrap /mnt <kernel_packages> linux-firmware <cpu-microcode> base base-devel go wget curl git openssh man-db vim sudo <network_packages> <bootloader_packages>
 ```
 
 The kernel is up to your choice - and you can even install multiple, and the docs are optional - here's a list of kernel packages:
@@ -90,6 +90,7 @@ The kernel is up to your choice - and you can even install multiple, and the doc
  - (linux hardened): `linux-hardened linux-hardened-headers linux-hardened-docs`
    - A security-hardened version of the regular kernel. Some packages may require specific versions for this kernel.
 
+The cpu microcode is very important, choose `intel-ucode` or `amd-ucode` according to CPU vendor
 
 The network tools are also to your choice, here's a list of ones I recommend:
  - (network manager): `networkmanager network-manager-applet`
