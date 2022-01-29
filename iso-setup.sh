@@ -10,7 +10,7 @@ echo "Configuring pacman."
 ## Enable Color, Verbose Package List, Parallel Downloads and Pacman Easter Egg
 sed -i "/^#Color/c\Color" /etc/pacman.conf
 sed -i "/^#VerbosePkgLists/c\VerbosePkgLists" /etc/pacman.conf
-sed -i "/^#ParallelDownloads = 5/c\ParallelDownloads = $cpu_count" /etc/pacman.conf
+sed -i "/^#ParallelDownloads = .*/c\ParallelDownloads = $cpu_count" /etc/pacman.conf
 sed -i "^/ParallelDownloads = .*/a ILoveCandy" /etc/pacman.conf
 ## Enable Multilib Repository
 # sed '/BBB/!b;n;c999' file
