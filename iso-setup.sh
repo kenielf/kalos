@@ -15,10 +15,12 @@ sed -i "^/ParallelDownloads = .*/a ILoveCandy" /etc/pacman.conf
 ## Enable Multilib Repository
 sed -i "/^#\[multilib\]$/c\\[multilib\]" /etc/pacman.conf
 sed -i '/^#\[multilib\]$/!b;n;cInclude = \/etc\/pacman\.d\/mirrorlist' /etc/pacman.conf
+# Sync repos
+pacman -Syy
 
 # Install git on ISO
 echo "Installing git"
-pacman -Sy --noconfirm git
+pacman -S --noconfirm git
 
 # Download repository and cd into it
 echo "Cloning repo"
