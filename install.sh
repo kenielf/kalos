@@ -68,7 +68,7 @@ echo -e "$space_l"
 ###--- GENERAL SYS CONFIG ---###
 # Install packages
 echo "Installing Packages..."
-pacman -S --noconfirm $pkg_kernel $pkg_ucode $pkg_essential $pkg_network $pkg_bootloader
+pacstrap /mnt $pkg_kernel $pkg_ucode $pkg_essential $pkg_network $pkg_bootloader
 # Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 echo -e "$space_l"
