@@ -1,4 +1,5 @@
 #!/bin/bash
+# curl -L "https://raw.githubusercontent.com/kenielf/kalos/development/iso-setup.sh" >> iso-setup.sh && chmod +x iso-setup.sh
 ###--- CONSTANTS ---###
 repo_name="kalos"
 repo_url="https://github.com/kenielf/$repo_name"
@@ -20,7 +21,7 @@ pacman -Syy
 
 # Install git on ISO
 echo "Installing git"
-pacman -S --noconfirm git
+pacman -S --needed --noconfirm git
 
 # Download repository and cd into it
 if [ ! -d $repo_name ]; then
