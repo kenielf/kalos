@@ -57,7 +57,9 @@ echo -e "$space_l"
 #set_username, set_upasswd, set_rpasswd, hostname, country, region, 
 read -p "Username: " set_username
 read -p "$set_uname's Password: " -s set_upasswd
+echo "\n"
 read -p "Root Password: " -s set_rpasswd
+echo "\n"
 read -p "Hostname: " hostname
 read -p "Country: " country
 read -p "Region: " region
