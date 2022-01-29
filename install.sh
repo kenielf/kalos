@@ -56,7 +56,7 @@ echo -e "$space_l"
 ###--- USER PREFERENCES
 #set_username, set_upasswd, set_rpasswd, hostname, country, region, 
 read -p "Username: " set_username
-read -p "$set_uname's Password: " -s set_upasswd
+read -p "$set_username's Password: " -s set_upasswd
 echo "\n"
 read -p "Root Password: " -s set_rpasswd
 echo "\n"
@@ -93,9 +93,9 @@ locale-gen;
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf;
 echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 echo "$hostname" >> /etc/hostname
-useradd -m $set_uname
-usermod -aG wheel,audio,video,optical,storage,games,users,input $set_uname
-echo "$set_upasswd\n$set_upasswd" | passwd $set_uname
+useradd -m $set_username
+usermod -aG wheel,audio,video,optical,storage,games,users,input $set_username
+echo "$set_upasswd\n$set_upasswd" | passwd $set_username
 echo "$set_rpasswd\n$set_rpasswd" | passwd
 # echo -e "127.0.0.1\tlocaldomain\n::1\t\tlocaldomain\n127.0.1.1\thostname.localdomain\thostname" >> /etc/hosts
 su $set_username -c <<EOF
