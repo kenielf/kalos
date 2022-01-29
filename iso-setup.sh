@@ -23,7 +23,11 @@ echo "Installing git"
 pacman -S --noconfirm git
 
 # Download repository and cd into it
-echo "Cloning repo"
-git clone "$repo_url"
-cd $repo_name
+if [ ! -d $repo_name ]; then
+	echo "Cloning repo"
+	git clone "$repo_url"
+	cd $repo_name
+fi
+
+echo "Finished"
 
