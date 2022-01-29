@@ -8,12 +8,12 @@ cpu_count=$(lscpu | grep -E "(^CPU\(s\):.*)" | grep -oP "(\d*)$")
 # Configure pacman
 echo "Configuring pacman."
 ## Enable Color, Verbose Package List, Parallel Downloads and Pacman Easter Egg
-sed -i '/^#Color/c\Color' /etc/pacman.conf
-sed -i '/^#VerbosePkgLists/c\VerbosePkgLists' /etc/pacman.conf
-sed -i '/^#ParallelDownloads = .*/c\ParallelDownloads = $cpu_count' /etc/pacman.conf
-sed -i '^/ParallelDownloads = .*/a ILoveCandy' /etc/pacman.conf
+sed -i "/^#Color/c\Color" /etc/pacman.conf
+sed -i "/^#VerbosePkgLists/c\VerbosePkgLists" /etc/pacman.conf
+sed -i "/^#ParallelDownloads = .*/c\ParallelDownloads = $cpu_count" /etc/pacman.conf
+sed -i "^/ParallelDownloads = .*/a ILoveCandy" /etc/pacman.conf
 ## Enable Multilib Repository
-sed -i '/^#\[multilib\]$/c\\[multilib\]' /etc/pacman.conf
+sed -i "/^#\[multilib\]$/c\\[multilib\]" /etc/pacman.conf
 sed -i '/^#\[multilib\]$/!b;n;cInclude = \/etc\/pacman\.d\/mirrorlist' /etc/pacman.conf
 
 # Install git on ISO
