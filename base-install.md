@@ -36,6 +36,7 @@ E.g.: If your user is "jonathan"
 ## Before Installing
 Before the system is installed and before any permanent change is done to the disk, assertain that you have both networking and the correct keyboard layout.
 
+
 If the keyboard layout isn't appropriate, list all keymaps and load the correct one.
 ```bash
 ls /usr/share/kbd/keymaps/**/*.map.gz
