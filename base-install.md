@@ -2,12 +2,14 @@
 ## Disclaimer
 This installation is intended for UEFI with BTRFS, if you're using different motherboard settings and/or other filesystems, please adapt them to the appropriate commands/settings.
 
+
 ## Preface
 ### Variables
 Every line that contains `$variable` should be replaced to an appropriate value.
 
 E.g.: If your user is "jonathan"
 `usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`
+
 
 ## Index
  - 1: [Before Installing](#Before-Installing)
@@ -30,22 +32,63 @@ E.g.: If your user is "jonathan"
  - 4: [Finishing](#Finishing)
  - 5: [After Installing](#After-Installing)
 
+
 ## Before Installing
+Before the system is installed and before any permanent change is done to the disk, assertain that you have both networking and the correct keyboard layout.
+
+
+If 
 ## Disk Preparation
+
+
 ## Installation
+
+
 ### Pacstrap
+
+
 ### FSTAB
+
+
 ### Chroot
+
+
 #### Time and Clock
+
+
 #### Pacman
+
+
 #### Sudo
+
+
 #### Locale
+
+
 #### Hostname
+
+
 #### Users
+
+
 #### AUR
+
+
 #### Initcpio
+
+
 #### Networking
+
+
 #### Bootloader
+
+
 #### Misc Services
+
+
 ## Finishing
+
+
 ## After Installing
+
+
