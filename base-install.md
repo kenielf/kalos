@@ -22,7 +22,7 @@ E.g.: If your user is "jonathan"
      - 3.3. 2: [Pacman](#Pacman)
      - 3.3. 3: [Sudo](#Sudo)
      - 3.3. 4: [Locale](#Locale)
-     - 3.3. 5: [Hostname](#Hostname)
+     - 3.3. 5: [Hostname](#Hostname-and-Hosts)
      - 3.3. 6: [Users](#Users)
      - 3.3. 7: [AUR](#AUR)
      - 3.3. 8: [Initcpio](#Initcpio)
@@ -206,10 +206,29 @@ echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 ```
 
 
-#### Hostname
+#### Hostname and Hosts
+Create your machine hostname with:
+```bash
+echo "$hostname" >> /etc/hostname
+```
+
+And create your hosts:
+```bash
+$hostname=$(cat /etc/hostname); echo -e "127.0.0.1\tlocaldomain\n::1\t\tlocaldomain\n127.0.1.1\t$hostname.localdomain\t$hostname" >> /etc/hosts
+```
 
 
 #### Users
+Create user and their password:
+```bash
+useradd -m $username
+usermod -aG wheel,audio,video,optical,storage,games,users,input $username
+passwd $username
+```
+Set up root password with
+```bash
+passwd
+```
 
 
 #### AUR
