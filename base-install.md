@@ -55,6 +55,62 @@ Test network connectivity with `ping archlinux.org`, if this does not yield mult
 
 
 ## Disk Preparation
+Prepare the preferred disk to install the system.
+
+*Note: I have a 240G SSD, so I partition it as such:*
+ - 2G: ESP (If you don't plan on customizing your bootloader, 550M is plenty)
+ - 4G: Swap (At least 2-4G - Match machine RAM is hibernation will be used)
+ - 200G: ROOT (Where the system is mostly located.)
+ Remaining space is reserved for other systems.
+
+
+Use `fdisk /dev/$sdx` to format your partition with these commmands:
+ - (n): New partition;
+ - (d): Delete partition;
+ - (p): Print partition scheme;
+ - (m): help Manual;
+ - (g): create Gpt partition table;
+ - (t): change partition Type:
+   -  1: EFI System
+   - 19: Linux swap
+   - 20: Linux filesystem
+ - (w): Write changes to disk;
+ - (q): Quit without saving;
+
+
+After partitioning is done, create the filesystems to be used
+ - FAT32 - ESP
+    ```bash
+    mkfs.fat -F32 -n $label /dev/$esp
+    ```
+ - SWAP
+    ```bash
+    mkswap -L $label /dev/$swap
+    swapon /dev/$swap
+    ```
+ - EXT4
+    ```bash
+    mkfs.ext4 -L $label /dev/$root
+    ```
+ - BTRFS
+    ```bash
+    mkfs.btrfs -L $label /dev/$root
+    mount /dev/$sdx /mnt && cd /mnt
+    btrfs subvolume create @
+    btrfs subvolume create @home
+    umount /mnt
+    ```
+    *Reminder: In this installation, btrfs will be used, so certain packages or steps may not be necessary if you're using ext4.*
+
+
+Then, mount the filesystems to their mountpoints:
+```bash
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@ /dev/$root /mnt
+mkdir -p /mnt/{boot/esp,home}
+mount -o noatime,space_cache=v2,compress=zstd,ssd,discard=async,subvol=@home /dev/$root /mnt/home
+mount /dev/$esp /mnt/boot/esp
+```
+*Note: the `-o noatime,...,subvol=@` section is not present on ext4*
 
 
 ## Installation
