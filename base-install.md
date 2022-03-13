@@ -1,4 +1,7 @@
 # Manual Arch Linux Installation - Base Install
+## Disclaimer
+This installation is intended for UEFI with BTRFS, if you're using different motherboard settings and/or other filesystems, please adapt them to the appropriate commands/settings.
+
 ## Preface
 ### Variables
 Every line that contains `$variable` should be replaced to an appropriate value.
