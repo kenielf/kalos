@@ -232,9 +232,27 @@ passwd
 
 
 #### AUR
+There are multiple AUR helpers, like `aura` or `paru` for example, but the only one I've had experience with is `yay`.
+```bash
+su $username
+cd ~ && git clone "https://aur.archlinux.org/yay-git.git" && cd yay-git
+makepkg -si && cd .. && rm -rf yay-git/
+yay --sudoloop --save
+```
 
 
 #### Initcpio
+*Note: this step is entirely optional on EXT4*
+*Note 2: Install `mkinitcpio-firmware` (aur) to add missing firmware.*
+
+
+Edit `/etc/mkinitcpio.conf` and:
+ - Add `btrfs` to `MODULES=()`
+
+After that, rebuild mkinitcpio with:
+```bash
+mkinitcpio -P
+```
 
 
 #### Networking
