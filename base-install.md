@@ -20,7 +20,7 @@ E.g.: If your user is "jonathan"
      - 3.3. 2: [Pacman](#Pacman)
      - 3.3. 3: [Sudo](#Sudo)
      - 3.3. 4: [Locale](#Locale)
-     - 3.3. 5: [Hostname]
+     - 3.3. 5: [Hostname](#Hostname)
      - 3.3. 6: [Users](#Users)
      - 3.3. 7: [AUR](#AUR)
      - 3.3. 8: [Initcpio](#Initcpio)
