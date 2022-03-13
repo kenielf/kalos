@@ -173,12 +173,37 @@ hwclock --systohc
 
 
 #### Pacman
+Modify pacman's configuration on `/etc/pacman.conf` to your liking.
+My preferred settings are:
+ - Uncomment lines containing:
+   - `Color`
+   - `CheckSpace`
+   - `VerbosePkgLists`
+   - `ParallelDownloads = 5`
+ - Replace `ParallelDownloads = 5 ParallelDownloads = $cpu_ncore`
+ - Enable multilib repository by uncommenting `[multilib]` and the line below it
 
 
 #### Sudo
+Change sudo configuration with `EDITOR=$editor visudo` and:
+ - Uncomment and remove the additional space `# %wheel ALL=(ALL) ALL` on line 82.
 
 
 #### Locale
+Modify locales on `/etc/locale.gen` to match your languages, this is my setup:
+ - Uncomment `en_US.UTF-8 UTF-8` on line 178 (Recommended);
+ - Uncomment `ja_JP.UTF-8 UTF-8` on line 303;
+ - Uncomment `pt_BR.UTF-8 UTF-8` on line 393;
+Now run these commands, with `$locale` being the first part of your preferred locale previously uncommented. Example: `en_US.UTF-8`
+```bash
+locale-gen
+echo "LANG=$locale" >> /etc/locale.conf
+```
+
+If you changed your keyboard layout on [Before Install](#Before-Install) make sure to make it permanent with:
+```bash
+echo "KEYMAP=$keymap" >> /etc/vconsole.conf
+```
 
 
 #### Hostname
