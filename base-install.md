@@ -117,7 +117,7 @@ mount /dev/$esp /mnt/boot/esp
 ### Pacstrap
 Install the base system with `pacstrap`
 ```bash
-picstrap /mnt $kernel_pkg linux-firmware $cpu_microcode_pkg base base-devel btrfs-progs polkit go wget curl git openssh man-db sudo $editor_pkg $network_pkg $bootloader_pkg
+picstrap /mnt $kernel_pkg linux-firmware linux-utils ufw tlp $cpu_microcode_pkg base base-devel btrfs-progs polkit go wget curl git openssh man-db sudo $editor_pkg $network_pkg $bootloader_pkg
 ```
 
 The kernel is up to personal choice - you can even install multiple, but the documentation is optional - here's a list of kernel packages:
@@ -238,7 +238,9 @@ su $username
 cd ~ && git clone "https://aur.archlinux.org/yay-git.git" && cd yay-git
 makepkg -si && cd .. && rm -rf yay-git/
 yay --sudoloop --save
+exit
 ```
+*Note: it is also recommended that you install any major AUR package before exiting the `su` command.*
 
 
 #### Initcpio
@@ -256,15 +258,43 @@ mkinitcpio -P
 
 
 #### Networking
+Set up networks on the new system with the previously installed network toolset.
+ - (Network Manager): `systemctl enable NetworkManager`
+ - (iwctl): `systemctl enable iwd.service`
 
 
 #### Bootloader
+Set up your bootloader with your previously installed packages.
+ - (grub):
+    `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
+    `grub-mkdconfig -o /boot/grub/grub.cfg`
+ - (refind):
+    `refind-install --usedefault /dev/$esp`
 
+If you're using BTRFS, then refind needs to be set up as such:
+```bash
+refind-install --alldrivers --usedefault /dev/$esp
+```
+
+And then, create the file `/boot/refind_linux.conf` with:
+```
+"Boot using default options" "root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw add_efi_menmap rootflags=subvol=@ initrd=@\boot\intel-ucode.img initrd=@\boot\initramfs-%v.img quiet"
+
+"Boot with multiuser.target" "root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw add_efi_menmap rootflags=subvol=@ initrd=@\boot\intel-ucode.img initrd=@\boot\initramfs-%v.img systemd.unit=multi-user.target"
+```
 
 #### Misc Services
-
+```
+systemctl enable ufw
+systemctl enable sshd
+systemctl enable fstrim.timer
+systemctl enable tlp
+sysctl -w vm.swappiness=10
+```
 
 ## Finishing
+Make sure everything is correct, exit the chroot with `exit`.
+Unmount all filesystems with `umount` and `swapoff`, and your system should be complete.
 
 
 ## After Installing
