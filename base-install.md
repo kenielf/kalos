@@ -36,8 +36,23 @@ E.g.: If your user is "jonathan"
 ## Before Installing
 Before the system is installed and before any permanent change is done to the disk, assertain that you have both networking and the correct keyboard layout.
 
+If the keyboard layout isn't appropriate, list all keymaps and load the correct one.
+```bash
+ls /usr/share/kbd/keymaps/**/*.map.gz
+loadkeys $keymap
+```
 
-If 
+Test network connectivity with `ping archlinux.org`, if this does not yield multiple lines of output or you're using wi-fi, you'll need to set it up manually with `iwctl`.
+ - `device list`:
+    List all networking devices;
+ - `station $device scan`:
+    Scan all networks on $device;
+ - `station $device get-networks`:
+    List all available networks on $device;
+ - `station $device connect $ssid`:
+    Connect to $ssid on $device.
+
+
 ## Disk Preparation
 
 
