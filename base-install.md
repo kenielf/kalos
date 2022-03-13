@@ -95,7 +95,7 @@ After partitioning is done, create the filesystems to be used
  - BTRFS
     ```bash
     mkfs.btrfs -L $label /dev/$root
-    mount /dev/$sdx /mnt && cd /mnt
+    mount /dev/$root /mnt && cd /mnt
     btrfs subvolume create @
     btrfs subvolume create @home
     umount /mnt
