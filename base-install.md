@@ -30,7 +30,7 @@ E.g.: If your user is "jonathan"
  - 4: [Finishing](#Finishing)
  - 5: [After Installing](#After-Installing)
 
-## 1: Before Installing
+## Before Installing
 Load keymaps, test network status, check dependencies, et cetera..
 If everything is correct you should proceed to the next step.
 
