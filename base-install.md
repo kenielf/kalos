@@ -7,14 +7,14 @@ E.g.: If your user is "jonathan"
 `usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`
 
 ## Index
- - 1: [Preface](##Preface)
- - 2: [Disk Setup](##Disk-Setup)
- - 3: [General System Setup](##General-System-Setup)
- - 4: [Chroot](##Chroot)
-   - 1: [Networking](###Networking)
-   - 2: [Bootloader](###Bootloader)
- - 5: [Finishing](##Finishing)
- - 6: [Post Install](##Post-Install)
+ - 1: [Preface](#Preface)
+ - 2: [Disk Setup](#Disk-Setup)
+ - 3: [General System Setup](#General-System-Setup)
+ - 4: [Chroot](#Chroot)
+   - 1: [Networking](#Networking)
+   - 2: [Bootloader](#Bootloader)
+ - 5: [Finishing](#Finishing)
+ - 6: [Post Install](#Post-Install)
 
 ## Step 1: Pre-install
 Load keymaps, test network status, check dependencies, et cetera..
