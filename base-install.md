@@ -150,12 +150,26 @@ Bootloader is also up to choice, here's two I use:
 
 
 ### FSTAB
+Set up fstab with the flag `-U`to enable mounting by UUID (safer)
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
 
 
 ### Chroot
+Change root to the new installation to setup system internally
+```bash
+arch-chroot /mnt
+```
 
 
 #### Time and Clock
+Change the timezone and clock settings to match your location.
+```bash
+ln -sf /usr/share/zoneinfo/$country/$zone /etc/localtime
+timedatectl set-ntp true
+hwclock --systohc
+```
 
 
 #### Pacman
