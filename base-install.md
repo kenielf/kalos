@@ -298,5 +298,8 @@ Unmount all filesystems with `umount` and `swapoff`, and your system should be c
 
 
 ## After Installing
+After the base minimal install is over, you may want to follow my way of installing the desktop environments and other things like that.
+If that is the case, read:
+ - [Extended Install](extended-install.md)
 
 
