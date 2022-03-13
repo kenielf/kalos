@@ -17,15 +17,18 @@ E.g.: If your user is "jonathan"
    - 3.2: [FSTAB](#FSTAB)
    - 3.3: [Chroot](#Chroot)
      - 3.3. 1: [Time and Clock](#Time-and-Clock)
-
-# - 1: [Preface](#Preface)
-# - 2: [Disk Setup](#Disk-Setup)
-# - 3: [General System Setup](#General-System-Setup)
-# - 4: [Chroot](#Chroot)
-#   - 1: [Networking](#Networking)
-#   - 2: [Bootloader](#Bootloader)
-# - 5: [Finishing](#Finishing)
-# - 6: [Post Install](#Post-Install)
+     - 3.3. 2: [Pacman](#Pacman)
+     - 3.3. 3: [Sudo](#Sudo)
+     - 3.3. 4: [Locale](#Locale)
+     - 3.3. 5: [Hostname]
+     - 3.3. 6: [Users](#Users)
+     - 3.3. 7: [AUR](#AUR)
+     - 3.3. 8: [Initcpio](#Initcpio)
+     - 3.3. 9: [Networking](#Networking)
+     - 3.3.10: [Bootloader](#Bootloader)
+     - 3.3.11: [Misc Services](#Misc-Services)
+ - 4: [Finishing](#Finishing)
+ - 5: [After Installing](#After-Installing)
 
 ## Step 1: Pre-install
 Load keymaps, test network status, check dependencies, et cetera..
