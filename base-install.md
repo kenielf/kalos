@@ -1,15 +1,9 @@
-# Manual Setup Steps
+# Manual Arch Linux Installation - Base Install
 ## Preface: Variables
-Every line that contains `<something>` should be swapped to a correct value, commands prefacing with `#` must be run with elevated permissions, while `$` should be run by regularly.
+Every line that contains `$variable` should be replaced to an appropriate value.
 
-For example:
-If your username is "jonathan"
-
-`usermod -aG wheel <username>`
-
-should become
-
-`usermod -aG wheel jonathan`
+E.g.: If your user is "jonathan"
+`usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`
 
 ## Index
  - 1: Pre-install
