@@ -114,9 +114,39 @@ mount /dev/$esp /mnt/boot/esp
 
 
 ## Installation
-
-
 ### Pacstrap
+Install the base system with `pacstrap`
+```bash
+picstrap /mnt $kernel_pkg linux-firmware $cpu_microcode_pkg base base-devel btrfs-progs polkit go wget curl git openssh man-db sudo $editor_pkg $network_pkg $bootloader_pkg
+```
+
+The kernel is up to personal choice - you can even install multiple, but the documentation is optional - here's a list of kernel packages:
+ - (linux): `linux linux-headers linux-docs`
+    The regular linux kernel, packaged for Arch Linux.
+ - (linux-zen): `linux-zen linux-zen-headers linux-zen-docs`
+    An optimized version of the regular kernel, my personal preference.
+ - (linux-lts):
+    The long term support version of the regular kernel.
+ - (linux-hardened):
+    A security-hardened version of the regular kernel.
+*Note: some packages may require specific versions to work with custom kernels.*
+
+
+The cpu microcode is very important, choose `intel-ucode` or `amd-ucode` according to your CPU vendor.
+
+
+Network tools are also up to choice, here's two I recommend:
+ - (Network Manager): `networkmanager network-manager-applet`
+    A commonly used network connection manager. `network-manager-applet` is optional is you're not using trays on the final system.
+ - (iwctl): `iwd`
+    The Internet Wireless Daemon
+
+
+Bootloader is also up to choice, here's two I use:
+ - (grub): `grub efibootmgr dosfstools os-prober mtools
+    The GNU Grand Unified Bootloader.
+ - (rEFInd): `refind dofstools efibootmgr`
+    A fork of `rEFIt`, my preferred bootloader.
 
 
 ### FSTAB
