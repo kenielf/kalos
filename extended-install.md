@@ -10,3 +10,27 @@ Every line that contains `$variable` should be replaced to an appropriate value.
 E.g.: If your user is "jonathan":
 
 `usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`.
+
+## Index
+ - [Preparing]()
+ - [Xorg]()
+   - [Xinit]()
+   - [Backlight]()
+ - [Input Manager]()
+ - [Audio]()
+ - [Window Manager]()
+   - [Terminal]()
+   - [Background]()
+   - [Notifications]()
+   - [Launcher]()
+   - [Powermenu]()
+   - [Complementary Applications]()
+ - [Display Manager]()
+ - [File Manager]()
+ - [Keyring]()
+ - [Git]()
+ - [CLI Tools]()
+   - [Irssi]()
+ - [GUI Tools]()
+ - [Gaming]()
+
