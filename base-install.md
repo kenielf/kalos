@@ -292,7 +292,7 @@ And then, create the file `/boot/refind_linux.conf` with:
 
 #### Misc Services
 ```
-systemctl enable ufw
+ufw enable
 systemctl enable sshd
 systemctl enable fstrim.timer
 systemctl enable tlp
