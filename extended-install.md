@@ -11,6 +11,7 @@ E.g.: If your user is "jonathan":
 
 `usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`.
 
+
 ## Index
  - [Preparing](#Preparing)
  - [Xorg](#Xorg)
@@ -34,6 +35,7 @@ E.g.: If your user is "jonathan":
    - [Irssi](#Irssi)
  - [GUI Tools](#GUI-Tools)
  - [Gaming](#Gaming)
+
 
 ## Preparing
 ## Xorg
