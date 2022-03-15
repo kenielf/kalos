@@ -7,8 +7,9 @@ This installation is intended for UEFI with BTRFS, if you're using different mot
 ### Variables
 Every line that contains `$variable` should be replaced to an appropriate value.
 
-E.g.: If your user is "jonathan"
-`usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`
+E.g.: If your user is "jonathan":
+
+`usermod -aG wheel $user` becomes `usermod -aG wheel jonathan`.
 
 
 ## Index
