@@ -38,6 +38,7 @@ E.g.: If your user is "jonathan":
    - [FFMPEG and ImageMagick](#FFMPEG-and-ImageMagic)
    - [Android Stuff](#Android-Stuff)
  - [GUI Tools](#GUI-Tools)
+   - [Firefox](#Firefox)
  - [Gaming](#Gaming)
 
 
@@ -338,4 +339,20 @@ pacman -S android-tools scrpcy
 ```
 
 ## GUI Tools
+### Firefox
+Install your preferred version (I use the esr one):
+```bash
+yay -S firefox-esr
+```
+
+Apply a custom theme if needed I use [EliverLara](https://github.com/EliverLara/firefox-nordic-theme)'s:
+```bash
+git clone https://github.com/EliverLara/firefox-nordic-theme && cd firefox-nordic-theme
+./scripts/install.sh
+cd ..
+rm -rf firefox-nordic-theme
+```
+*Note: add `"#contentAreaContextMenu { margin: 10px 0px 0px 10px; }"` to `userChrome.css` to avoid right click action menu issues.
+
+
 ## Gaming
