@@ -37,6 +37,7 @@ E.g.: If your user is "jonathan":
    - [Irssi](#Irssi)
    - [FFMPEG and ImageMagick](#FFMPEG-and-ImageMagic)
    - [Android Stuff](#Android-Stuff)
+   - [PDS Kernel](#PDS-Kernel)
  - [GUI Tools](#GUI-Tools)
    - [Firefox](#Firefox)
  - [Gaming](#Gaming)
@@ -337,6 +338,28 @@ yay -S ffmpeg-git imagemagick
 ```
 pacman -S android-tools scrpcy
 ```
+
+### PDS Kernel
+Receive the mainline kernel's key
+```bash
+gpg --keyserver "hkps://keys.openpgp.org" --recv-keys 3B94A80E50A477C7
+```
+
+Receive PDS's key:
+```bash
+# Receive mainline linux kernel keys
+gpg --recv-keys 647F28654894E3BD457199BE38DBBDC86092693E
+gpg --recv-keys A2FF3A36AAA56654109064AB19802F8B0D70FC30
+gpg --recv-keys C7E7849466FE2358343588377258734B41C31549
+gpg --recv-keys ABAF11C65A2970B130ABE3C479BE3E4300411886
+```
+
+And finally, install it:
+```bash
+yay -S linux-pds{,-headers,-docs}
+```
+*Note: a lot of warnings will pop up and the docs package may fail installation.* 
+
 
 ## GUI Tools
 ### Firefox
