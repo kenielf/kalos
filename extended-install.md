@@ -36,7 +36,7 @@ E.g.: If your user is "jonathan":
  - [CLI Tools](#CLI-Tools)
    - [Irssi](#Irssi)
    - [FFMPEG and ImageMagick](#FFMPEG-and-ImageMagic)
-   - [Android Stuff](#Android Stuff)
+   - [Android Stuff](#Android-Stuff)
  - [GUI Tools](#GUI-Tools)
  - [Gaming](#Gaming)
 
