@@ -118,7 +118,7 @@ mount /dev/$esp /mnt/boot/esp
 ### Pacstrap
 Install the base system with `pacstrap`
 ```bash
-picstrap /mnt $kernel_pkg linux-firmware linux-utils ufw tlp $cpu_microcode_pkg base base-devel btrfs-progs polkit go wget curl git openssh man-db sudo $editor_pkg $network_pkg $bootloader_pkg
+pacstrap /mnt $kernel_pkg linux-firmware linux-utils ufw tlp $cpu_microcode_pkg base base-devel btrfs-progs polkit go wget curl git openssh man-db sudo $editor_pkg $network_pkg $bootloader_pkg
 ```
 
 The kernel is up to personal choice - you can even install multiple, but the documentation is optional - here's a list of kernel packages:
