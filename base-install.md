@@ -194,7 +194,7 @@ Change sudo configuration with `EDITOR=$editor visudo` and:
 Modify locales on `/etc/locale.gen` to match your languages, this is my setup:
  - Uncomment `en_US.UTF-8 UTF-8` on line 178 (Recommended);
  - Uncomment `ja_JP.UTF-8 UTF-8` on line 303;
- - Uncomment `pt_BR.UTF-8 UTF-8` on line 393;
+ - Uncomment `pt_BR.UTF-8 UTF-8` on line 394;
 Now run these commands, with `$locale` being the first part of your preferred locale previously uncommented. Example: `en_US.UTF-8`
 ```bash
 locale-gen
@@ -293,12 +293,12 @@ And then, create the file `/boot/refind_linux.conf` with:
 
 #### Misc Services
 ```
-ufw enable
 systemctl enable sshd
 systemctl enable fstrim.timer
 systemctl enable tlp
 sysctl -w vm.swappiness=10
 ```
+*Note: after rebooting, run `ufw enable` to enable firewall, since the ISO will error out when running it.*
 
 ## Finishing
 Make sure everything is correct, exit the chroot with `exit`.
