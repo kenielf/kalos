@@ -144,14 +144,14 @@ Network tools are also up to choice, here's two I recommend:
 
 
 Bootloader is also up to choice, here's two I use:
- - (grub): `grub efibootmgr dosfstools os-prober mtools
+ - (grub): `grub efibootmgr dosfstools os-prober mtools`
     The GNU Grand Unified Bootloader.
  - (rEFInd): `refind dofstools efibootmgr`
     A fork of `rEFIt`, my preferred bootloader.
 
 
 ### FSTAB
-Set up fstab with the flag `-U`to enable mounting by UUID (safer)
+Set up fstab with the flag `-U` to enable mounting by UUID (safer)
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -182,7 +182,8 @@ My preferred settings are:
    - `VerbosePkgLists`
    - `ParallelDownloads = 5`
  - Replace `ParallelDownloads = 5 ParallelDownloads = $cpu_ncore`
- - Enable multilib repository by uncommenting `[multilib]` and the line below it
+ - Enable multilib repository by uncommenting `[multilib]` and the line below it.
+ - Run `pacman -Syy` to synchronize the repositories.
 
 
 #### Sudo
@@ -215,12 +216,12 @@ echo "$hostname" >> /etc/hostname
 
 And create your hosts:
 ```bash
-$hostname=$(cat /etc/hostname); echo -e "127.0.0.1\tlocaldomain\n::1\t\tlocaldomain\n127.0.1.1\t$hostname.localdomain\t$hostname" >> /etc/hosts
+hostname=$(cat /etc/hostname); echo -e "127.0.0.1\tlocaldomain\n::1\t\tlocaldomain\n127.0.1.1\t$hostname.localdomain\t$hostname" >> /etc/hosts
 ```
 Or just add the text below to /etc/hosts:
 ```
 127.0.0.1	localdomain
-::1		localdomain
+::1         localdomain
 127.0.1.1	$hostname.localdomain	$hostname
 ```
 *Note: don't forget to replace the variable with the appropriate value.*
