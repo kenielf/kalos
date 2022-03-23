@@ -14,7 +14,7 @@ Typos can be directly fixed as pull requests, no questions asked. Changes must b
  - [Guides](#Guides)
  - [Scripts](#Scripts)
 
-## Guide
+## Guides
  - [Base Installation](base-install.md)
  - [Extended Installation](extended-install.md)
 
