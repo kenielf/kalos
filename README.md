@@ -10,7 +10,13 @@ Create an issue and describe what you believe should be changed, if possible als
 ### Guides and Notes
 Typos can be directly fixed as pull requests, no questions asked. Changes must be suggested first, and if permitted, created through a pull request.
 
-## Files
+## Index
+ - [Guides](#Guides)
+ - [Scripts](#Scripts)
+
+## Guide
  - [Base Installation](base-install.md)
  - [Extended Installation](extended-install.md)
 
+## Scripts
+In development.
