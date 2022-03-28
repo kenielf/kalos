@@ -90,14 +90,20 @@ ln -sf ~/Dotfiles/.xinitrc ~/.xinitrc
 
 
 ### Backlight
-This is mostly specific for my system, but the regular modesetting driver that is used does not automatically set up backlight support, so add the block below to `/etc/X11/xorg.conf.d/20-intel.conf`:
-```bash
-Section "Device"
-    Identifier  "Intel Graphics"
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection
-```
+This is specific to intel systems:
+ - If you're running with the `xf86-video-intel` driver, add the block below to `/etc/X11/xorg.conf.d/20-intel.conf`:
+    ```bash
+    Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+    ```
+ - And if not, you're most likely using modesetting, if so add the block below to `/etc/udev/rules.d/backlight.rules`:
+    ```bash
+    RUN+="/bin/chgrp video /sys/class/backlight/intel_backlight/brightness"
+    RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+    ```
 
 
 ## Fonts
@@ -111,6 +117,7 @@ Also install from the aur the nerd fonts, personally, I prefer the bigger but co
 yay -S nerd-fonts-complete
 ```
 *Note: you can also add `ttf-kanjistrokeorders` if you're planning on using Anki for Japanese
+
 
 ## Input Manager
 The input manager I use is fcitx5, as it has better handling of asian languages. Install it with:
